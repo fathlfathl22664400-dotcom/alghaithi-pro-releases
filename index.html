@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الغيثي برو — نظام محاسبة متكامل</title>
+  <meta name="description" content="الغيثي برو — نظام محاسبة احترافي للشركات والمنشآت. يشمل نقطة البيع والمخزون والفواتير والرواتب والتقارير المالية.">
+  <meta property="og:title" content="الغيثي برو — نظام محاسبة متكامل">
+  <meta property="og:description" content="حمّل تطبيق الغيثي برو مجاناً — نظام محاسبة احترافي لإدارة منشأتك">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #0A0C1A;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0F1120 0%, #13152A 100%);
+      border-bottom: 1px solid #1E2035;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #4DA3FF, #7B5CF6);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    header h1 { font-size: 20px; font-weight: 900; }
+    header span { color: #636366; font-size: 13px; margin-right: 4px; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 40px;
+      background: radial-gradient(ellipse at top, #1A1C3A 0%, #0A0C1A 60%);
+    }
+    .app-icon {
+      width: 100px; height: 100px;
+      background: linear-gradient(135deg, #4DA3FF 0%, #7B5CF6 100%);
+      border-radius: 28px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 48px;
+      margin-bottom: 24px;
+      box-shadow: 0 20px 60px rgba(77,163,255,0.3);
+    }
+    .hero h2 {
+      font-size: 36px; font-weight: 900;
+      background: linear-gradient(135deg, #fff, #4DA3FF);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: #8E8E93; font-size: 16px; max-width: 480px;
+      margin: 0 auto 32px; line-height: 1.8;
+    }
+    .version-badge {
+      display: inline-block;
+      background: rgba(77,163,255,0.12);
+      border: 1px solid rgba(77,163,255,0.25);
+      color: #4DA3FF;
+      padding: 4px 14px; border-radius: 20px;
+      font-size: 13px; font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    /* ── Download Button ── */
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #4DA3FF, #7B5CF6);
+      color: #fff; text-decoration: none;
+      padding: 18px 40px; border-radius: 16px;
+      font-size: 18px; font-weight: 900;
+      box-shadow: 0 8px 32px rgba(77,163,255,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 16px;
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(77,163,255,0.45);
+    }
+    .download-btn svg { width: 22px; height: 22px; fill: #fff; }
+    .file-info { color: #636366; font-size: 13px; }
+
+    /* ── Install Steps ── */
+    .steps {
+      background: #13152A;
+      border: 1px solid #1E2035;
+      border-radius: 16px;
+      max-width: 520px;
+      margin: 32px auto;
+      padding: 24px;
+      text-align: right;
+    }
+    .steps h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .step {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 14px;
+    }
+    .step-num {
+      min-width: 28px; height: 28px;
+      background: rgba(77,163,255,0.15);
+      border: 1px solid rgba(77,163,255,0.3);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #4DA3FF; font-size: 13px; font-weight: 800;
+    }
+    .step p { color: #C7C7CC; font-size: 14px; line-height: 1.6; }
+    .step p b { color: #fff; }
+
+    /* ── Features ── */
+    .features {
+      max-width: 720px; margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+    .features h3 {
+      text-align: center; font-size: 22px; font-weight: 800;
+      margin-bottom: 24px; color: #fff;
+    }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: #13152A;
+      border: 1px solid #1E2035;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: right;
+    }
+    .card-icon { font-size: 26px; margin-bottom: 8px; }
+    .card h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .card p  { font-size: 12px; color: #636366; line-height: 1.5; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #1E2035;
+      padding: 20px 24px;
+      text-align: center;
+      color: #3A3A4A; font-size: 13px;
+    }
+    footer a { color: #4DA3FF; text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .hero h2 { font-size: 26px; }
+      .download-btn { padding: 16px 28px; font-size: 16px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <h1>الغيثي برو <span>نظام محاسبة</span></h1>
+    </div>
+    <div class="logo-icon">🏢</div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="app-icon">🏢</div>
+    <div class="version-badge">الإصدار v1.0.0</div>
+    <h2>الغيثي برو</h2>
+    <p>نظام محاسبة احترافي مصمم للشركات والمنشآت الصغيرة والمتوسطة — أدِر مبيعاتك ومخزونك ورواتبك من مكان واحد</p>
+
+    <!-- Download -->
+    <a class="download-btn"
+       href="https://github.com/fathlfathl22664400-dotcom/alghaithi-pro-releases/releases/latest/download/app-release.apk"
+       download>
+      <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-6 2h12v2H6v-2z"/></svg>
+      تحميل التطبيق مجاناً
+    </a>
+    <br>
+    <span class="file-info">APK — Android · حجم الملف ~51 MB</span>
+
+    <!-- Steps -->
+    <div class="steps">
+      <h3>📲 كيفية التثبيت</h3>
+      <div class="step">
+        <p><b>١.</b> اضغط زر التحميل أعلاه وانتظر اكتمال التحميل</p>
+        <div class="step-num">١</div>
+      </div>
+      <div class="step">
+        <p><b>٢.</b> على جهازك: الإعدادات ← الأمان ← السماح بمصادر غير معروفة</p>
+        <div class="step-num">٢</div>
+      </div>
+      <div class="step">
+        <p><b>٣.</b> افتح ملف APK المحمّل واضغط <b>تثبيت</b></p>
+        <div class="step-num">٣</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h3>ما يتضمنه التطبيق</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h4>نقطة البيع</h4>
+        <p>POS متكامل مع سلة وخصومات وأنواع دفع متعددة</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h4>المخزون</h4>
+        <p>إدارة المنتجات مع تنبيهات عند نفاد المخزون</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧾</div>
+        <h4>الفواتير</h4>
+        <p>إنشاء فواتير وتتبع المدفوعات والمستحقات</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h4>العملاء</h4>
+        <p>قاعدة بيانات العملاء وتاريخ مشترياتهم</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚚</div>
+        <h4>الموردون</h4>
+        <p>إدارة الموردين وطلبات الشراء واستلام المخزون</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍💼</div>
+        <h4>الموظفون</h4>
+        <p>إدارة الموظفين ومسير الرواتب الشهري</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h4>التقارير المالية</h4>
+        <p>تدفق نقدي · قائمة دخل · ضريبة VAT · ميزانية عمومية</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h4>مساعد AI</h4>
+        <p>مساعد ذكي يحلل بياناتك ويجيب على أسئلتك</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💸</div>
+        <h4>المصاريف</h4>
+        <p>تتبع المصاريف مع ربط الحسابات المحاسبية</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔔</div>
+        <h4>الإشعارات</h4>
+        <p>تنبيهات تلقائية للمخزون والفواتير والرواتب</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h4>تحديثات تلقائية</h4>
+        <p>ينبّهك التطبيق فور توفر إصدار جديد</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h4>إعدادات متقدمة</h4>
+        <p>معلومات المنشأة · الضريبة · العملة · الإشعارات</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>الغيثي برو v1.0.0 · جميع الحقوق محفوظة &copy; 2025</p>
+  </footer>
+
+</body>
+</html>
